@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  background-color: #000022;
+}
+
+h1 {
+  margin: 50px 0 30px;
+  text-align: center;
+  color: #e28413;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #e28413;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: #e28413;
+  color: #000022;
+  border: 1px solid #000;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adds it in before and after the main CSS */
+/* Icon positioning */
+.faq.active::before,
+.faq.active::after {
+  content: "\f075";
+  font-family: "Font Awesome 5 Free";
+  color: #e28413;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.15;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #464646;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+}
+
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: white;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #9fa4a8;
+}
